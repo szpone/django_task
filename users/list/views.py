@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DeleteView, CreateView, UpdateView
+from django.views.generic import ListView, DeleteView, CreateView, UpdateView, DetailView
 from django.urls import reverse_lazy
 
 from .models import User
@@ -21,3 +21,7 @@ class UserUpdateView(UpdateView):
     model = User
     fields = ["username", "birthday"]
     success_url = reverse_lazy("user-list")
+
+
+class UserDetailView(DetailView):
+    model = User
