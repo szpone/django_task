@@ -10,6 +10,7 @@
                 <th>BizzFuzz</th>
                 <th>Status</th>
                 <th>Delete</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +22,7 @@
                 <td>{{ user.random_number }}</td>
                 <td>{% bizz_fuzz user %}</td>
                 <td><a role="button" href="{% url 'user-delete' pk=user.id %}">Delete</a></td>
-
+                <td><a role="button" href="{% url 'user-update' pk=user.id %}">Update</a></td>
             </tr>
         {% endfor %}
         </tbody>

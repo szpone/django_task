@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DeleteView, CreateView, UpdateView
 from django.urls import reverse_lazy
 
@@ -15,4 +14,10 @@ class UserListView(ListView):
 
 class UserDeleteView(DeleteView):
     model = User
+    success_url = reverse_lazy("user-list")
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    fields = ["username", "birthday"]
     success_url = reverse_lazy("user-list")
