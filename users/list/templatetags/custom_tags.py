@@ -6,7 +6,8 @@ register = template.Library()
 
 user_status = {
     "allowed": "Allowed",
-    "blocked": "Blocked"
+    "blocked": "Blocked",
+    "invalid": "No birthdate available",
 }
 
 number_status = {
@@ -29,6 +30,8 @@ def status(user):
             return user_status["blocked"]
         else:
             return user_status["allowed"]
+    else:
+        return user_status["invalid"]
 
 
 @register.simple_tag
