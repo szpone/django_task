@@ -1,5 +1,26 @@
 {% extends 'list/base.html' %}
+{% load custom_tags %}
 {% block content %}
-    elo
-
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Birthday</th>
+                <th>Random number</th>
+                <th>BizzFuzz</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.birthday }}</td>
+                <td>{% status user %}</td>
+                <td>{{ user.random_number }}</td>
+                <td>{% bizz_fuzz user %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

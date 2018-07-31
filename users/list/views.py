@@ -8,3 +8,4 @@ from .models import User
 class UserListView(ListView):
     model = User
     queryset = User.objects.all()
+    context_object_name = "users"
