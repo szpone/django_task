@@ -24,9 +24,9 @@ def calculate_age(birthday):
 
 
 @register.simple_tag
-def status(user):
-    if user.birthday is not None:
-        if calculate_age(user.birthday) < 13:
+def status(birthday):
+    if birthday is not None:
+        if calculate_age(birthday) < 13:
             return user_status["blocked"]
         else:
             return user_status["allowed"]
