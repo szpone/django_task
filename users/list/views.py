@@ -25,3 +25,10 @@ class UserUpdateView(UpdateView):
 
 class UserDetailView(DetailView):
     model = User
+
+
+class UserCreateView(CreateView):
+    model = User
+    fields = ["username", "birthday"]
+    success_url = reverse_lazy("user-list")
+
