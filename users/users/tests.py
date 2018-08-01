@@ -14,13 +14,38 @@ class CustomTemplateTagTest(TestCase):
 
         self.assertEqual(result, 19)
 
-    def test_render_status(self):
+    def test_render_allowed(self):
         birthday = date(1999, 8, 20)
         c = Context({'value': birthday})
         t = Template('{% load custom_tags %}{% status  value %}')
 
-        rendered = t.render(c)
-        self.assertEqual(rendered, "Allowed")
+        self.assertEqual(t.render(c), "Allowed")
+
+    def test_render_blocked(self):
+        birthday = date(2010, 8, 20)
+        c = Context({'value': birthday})
+        t = Template('{% load custom_tags %}{% status  value %}')
+
+        self.assertEqual(t.render(c), "Blocked")
+
+    def test_fuzz(self):
+        c = Context({"value": 5})
+        t = Template('{% load custom_tags %}{% bizz_fuzz value %}')
+
+        self.assertEqual(t.render(c), "Fuzz")
+
+    def test_bizz(self):
+        c = Context({"value": 3})
+        t = Template('{% load custom_tags %}{% bizz_fuzz value %}')
+
+        self.assertEqual(t.render(c), "Bizz")
+
+    def test_bizz_fuzz(self):
+        c = Context({"value": 15})
+        t = Template('{% load custom_tags %}{% bizz_fuzz value %}')
+
+        self.assertEqual(t.render(c), "BizzFuzz")
+
 
 
 

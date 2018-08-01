@@ -20,7 +20,7 @@
                 <td>{{ user.birthday }}</td>
                 <td>{% status user.birthday %}</td>
                 <td>{{ user.random_number }}</td>
-                <td>{% bizz_fuzz user %}</td>
+                <td>{% bizz_fuzz user.random_number %}</td>
                 <td><a role="button" href="{% url 'user-delete' pk=user.id %}">Delete</a></td>
                 <td><a role="button" href="{% url 'user-update' pk=user.id %}">Update</a></td>
             </tr>
