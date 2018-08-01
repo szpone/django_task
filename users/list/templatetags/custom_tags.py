@@ -35,8 +35,7 @@ def status(birthday):
 
 
 @register.simple_tag
-def bizz_fuzz(user):
-    number = user.random_number
+def bizz_fuzz(number):
     if number % 3 == 0 and number % 5 == 0:
         return number_status["bizz_fuzz"]
     elif number % 3 == 0:
