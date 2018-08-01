@@ -18,7 +18,7 @@
             <tr>
                 <td><a href="{% url 'user-view' pk=user.id %}">{{ user.username }}</a></td>
                 <td>{{ user.birthday }}</td>
-                <td>{% status user %}</td>
+                <td>{% status user.birthday %}</td>
                 <td>{{ user.random_number }}</td>
                 <td>{% bizz_fuzz user %}</td>
                 <td><a role="button" href="{% url 'user-delete' pk=user.id %}">Delete</a></td>
