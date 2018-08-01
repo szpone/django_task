@@ -1,0 +1,30 @@
+{% extends 'list/base.html' %}
+{% load custom_tags %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Birthday</th>
+                <th>Status</th>
+                <th>Random number</th>
+                <th>BizzFuzz</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{% url 'user-view' pk=user.id %}">{{ user.username }}</a></td>
+                <td>{{ user.birthday }}</td>
+                <td>{% status user.birthday %}</td>
+                <td>{{ user.random_number }}</td>
+                <td>{% bizz_fuzz user.random_number %}</td>
+                <td><a role="button" href="{% url 'user-delete' pk=user.id %}">Delete</a></td>
+                <td><a role="button" href="{% url 'user-update' pk=user.id %}">Update</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
