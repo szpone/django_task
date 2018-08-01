@@ -1,8 +1,8 @@
 <H1> Django task </H1>
 
-H3 Python version: 3.6
-H3 Django version: 2.0.7
-H3 Virtual environment: Pipenv
+<H3> Python version: 3.6 </H3>
+<H3> Django version: 2.0.7 </H3>
+<H3> Virtual environment: Pipenv </H3>
 
 1. Install Pipenv using `pip install pipenv` command. If you are using other OS than Linux, please refer to the [documentation](https://docs.pipenv.org/install/)
 2. Clone repository (`git clone`) either via HTTPS or SSH. SSH is recommended as it is more secure
